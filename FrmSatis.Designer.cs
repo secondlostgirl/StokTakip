@@ -345,6 +345,7 @@
             button8.TabIndex = 3;
             button8.Text = "Ürün Listeleme";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button7
             // 
@@ -392,6 +393,7 @@
             Controls.Add(groupBox2);
             Controls.Add(dataGridView1);
             Controls.Add(txtTelefon);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmSatis";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Satış Sayfası";

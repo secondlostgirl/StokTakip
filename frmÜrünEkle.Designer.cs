@@ -45,7 +45,9 @@
             txtÜrünAdı = new TextBox();
             txtBarkodNo = new TextBox();
             groupBox2 = new GroupBox();
-            btnVarOlanEkle = new Button();
+            lblMiktarı = new Label();
+            llblMiktari = new Label();
+            btnVarOlanaEkle = new Button();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
@@ -60,7 +62,6 @@
             MarkaTxt = new TextBox();
             KategoriTxt = new TextBox();
             BarkodNoTxt = new TextBox();
-            llblMiktari = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -217,8 +218,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(lblMiktarı);
             groupBox2.Controls.Add(llblMiktari);
-            groupBox2.Controls.Add(btnVarOlanEkle);
+            groupBox2.Controls.Add(btnVarOlanaEkle);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label10);
@@ -233,22 +235,39 @@
             groupBox2.Controls.Add(MarkaTxt);
             groupBox2.Controls.Add(KategoriTxt);
             groupBox2.Controls.Add(BarkodNoTxt);
-            groupBox2.Location = new Point(436, 12);
+            groupBox2.Location = new Point(431, 12);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(250, 455);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Var Olan Ürün";
             // 
-            // btnVarOlanEkle
+            // lblMiktarı
             // 
-            btnVarOlanEkle.ForeColor = Color.Black;
-            btnVarOlanEkle.Location = new Point(136, 352);
-            btnVarOlanEkle.Name = "btnVarOlanEkle";
-            btnVarOlanEkle.Size = new Size(94, 29);
-            btnVarOlanEkle.TabIndex = 3;
-            btnVarOlanEkle.Text = "Ekle";
-            btnVarOlanEkle.UseVisualStyleBackColor = true;
+            lblMiktarı.AutoSize = true;
+            lblMiktarı.Location = new Point(34, 352);
+            lblMiktarı.Name = "lblMiktarı";
+            lblMiktarı.Size = new Size(0, 20);
+            lblMiktarı.TabIndex = 22;
+            // 
+            // llblMiktari
+            // 
+            llblMiktari.AutoSize = true;
+            llblMiktari.Location = new Point(22, 352);
+            llblMiktari.Name = "llblMiktari";
+            llblMiktari.Size = new Size(0, 20);
+            llblMiktari.TabIndex = 21;
+            // 
+            // btnVarOlanaEkle
+            // 
+            btnVarOlanaEkle.ForeColor = Color.Black;
+            btnVarOlanaEkle.Location = new Point(136, 352);
+            btnVarOlanaEkle.Name = "btnVarOlanaEkle";
+            btnVarOlanaEkle.Size = new Size(94, 29);
+            btnVarOlanaEkle.TabIndex = 3;
+            btnVarOlanaEkle.Text = "Ekle";
+            btnVarOlanaEkle.UseVisualStyleBackColor = true;
+            btnVarOlanaEkle.Click += btnVarOlanaEkle_Click;
             // 
             // label8
             // 
@@ -363,14 +382,6 @@
             BarkodNoTxt.TabIndex = 0;
             BarkodNoTxt.TextChanged += BarkodNoTxt_TextChanged;
             // 
-            // llblMiktari
-            // 
-            llblMiktari.AutoSize = true;
-            llblMiktari.Location = new Point(22, 352);
-            llblMiktari.Name = "llblMiktari";
-            llblMiktari.Size = new Size(0, 20);
-            llblMiktari.TabIndex = 21;
-            // 
             // frmÜrünEkle
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -417,7 +428,7 @@
         private Label label1;
         private ComboBox comboMarka;
         private Button btnYeniEkle;
-        private Button btnVarOlanEkle;
+        private Button btnVarOlanaEkle;
         private Label label8;
         private Label label9;
         private Label label10;
@@ -426,5 +437,6 @@
         private Label label13;
         private Label label14;
         private Label llblMiktari;
+        private Label lblMiktarı;
     }
 }

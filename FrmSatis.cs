@@ -33,8 +33,14 @@ namespace StokTakip
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmMarka marka = new frmMarka();    
+            frmMarka marka = new frmMarka();
             marka.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmÜrünListele listele= new frmÜrünListele();   
+            listele.ShowDialog();
         }
     }
 }

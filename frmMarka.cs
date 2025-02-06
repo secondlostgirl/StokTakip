@@ -20,16 +20,45 @@ namespace StokTakip
             InitializeComponent();
         }
         SqlConnection baglanti = new SqlConnection("Data Source=SENA\\SQLEXPRESS;Initial Catalog=Stok_Takip;Integrated Security=True;Encrypt=False;");
+
+
+        bool durum;
+        private void markakontrol()
+        {
+            durum = true;
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("select * from markabilgileri", baglanti);
+            SqlDataReader read = komut.ExecuteReader();
+            while (read.Read())
+            {
+                if (comboBox1.Text==read["kategori"].ToString() &&  textBox1.Text == read["marka"].ToString() || comboBox1.Text == "" || textBox1.Text=="")
+                {
+
+                    durum = false;
+
+                }
+            }
+            baglanti.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("insert into markabilgileri (kategori,marka) values('" + comboBox1.Text + "','" + textBox1.Text + "')", baglanti);
-            komut.ExecuteNonQuery();
-            baglanti.Close();
+            markakontrol();
+            if (durum == true)
+            {
+                baglanti.Open();
+                SqlCommand komut = new SqlCommand("insert into markabilgileri (kategori,marka) values('" + comboBox1.Text + "','" + textBox1.Text + "')", baglanti);
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+                MessageBox.Show("Marka Eklendi");
+               
+               
+            }
+            else
+            {
+                MessageBox.Show("Bu isimle birkategori ve marka bulunmakta");
+            }
             textBox1.Text = "";
             comboBox1.Text = "";
-            MessageBox.Show("Marka Eklendi");
         }
         private void kategorigetir()
         {

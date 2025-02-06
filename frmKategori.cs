@@ -17,6 +17,23 @@ namespace StokTakip
             InitializeComponent();
         }
         SqlConnection baglanti = new SqlConnection("Data Source=SENA\\SQLEXPRESS;Initial Catalog=Stok_Takip;Integrated Security=True;Encrypt=False;");
+
+        bool durum;
+        private void kategorikontrol()
+        {
+            durum = true;
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("select * from kategoribilgileri", baglanti);
+            SqlDataReader read= komut.ExecuteReader();
+            while (read.Read())
+            {
+                if (textBox1.Text == read["kategori"].ToString()|| textBox1.Text=="") { 
+                
+                durum=false;
+                
+                }          }
+            baglanti.Close();
+        }
         private void frmKategori_Load(object sender, EventArgs e)
         {
 
@@ -24,12 +41,21 @@ namespace StokTakip
 
         private void button1_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("insert into kategoribilgileri (kategori) values('"+textBox1.Text+"')",baglanti);
-        komut.ExecuteNonQuery();
-            baglanti.Close();
+            kategorikontrol();
+            if (durum==true) {
+                baglanti.Open();
+                SqlCommand komut = new SqlCommand("insert into kategoribilgileri (kategori) values('" + textBox1.Text + "')", baglanti);
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+                
+                MessageBox.Show("Kategori Eklendi");
+            }
+            else
+            {
+                MessageBox.Show("Bu isimle bir kategori bulunmakta");
+            }
             textBox1.Text = "";
-            MessageBox.Show("Kategori Eklendi");
         }
     }
 }
+
