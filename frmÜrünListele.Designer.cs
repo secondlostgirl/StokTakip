@@ -49,7 +49,11 @@
             btnSil = new Button();
             BarkodNoAra = new TextBox();
             label1 = new Label();
-            button1 = new Button();
+            comboKategori = new ComboBox();
+            comboMarka = new ComboBox();
+            label2 = new Label();
+            label3 = new Label();
+            btnMarkaGuncelle = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -60,8 +64,9 @@
             dataGridView1.Location = new Point(305, 83);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(689, 385);
+            dataGridView1.Size = new Size(689, 442);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
             // lblMiktarı
             // 
@@ -82,12 +87,13 @@
             // btnGüncelle
             // 
             btnGüncelle.ForeColor = Color.Black;
-            btnGüncelle.Location = new Point(185, 378);
+            btnGüncelle.Location = new Point(185, 387);
             btnGüncelle.Name = "btnGüncelle";
             btnGüncelle.Size = new Size(94, 29);
             btnGüncelle.TabIndex = 27;
             btnGüncelle.Text = "Güncelle";
             btnGüncelle.UseVisualStyleBackColor = true;
+            btnGüncelle.Click += btnGüncelle_Click;
             // 
             // label8
             // 
@@ -184,6 +190,7 @@
             // 
             MarkaTxt.Location = new Point(154, 170);
             MarkaTxt.Name = "MarkaTxt";
+            MarkaTxt.ReadOnly = true;
             MarkaTxt.Size = new Size(125, 27);
             MarkaTxt.TabIndex = 25;
             // 
@@ -191,6 +198,7 @@
             // 
             KategoriTxt.Location = new Point(154, 125);
             KategoriTxt.Name = "KategoriTxt";
+            KategoriTxt.ReadOnly = true;
             KategoriTxt.Size = new Size(125, 27);
             KategoriTxt.TabIndex = 24;
             // 
@@ -209,6 +217,7 @@
             btnSil.TabIndex = 40;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // BarkodNoAra
             // 
@@ -216,6 +225,7 @@
             BarkodNoAra.Name = "BarkodNoAra";
             BarkodNoAra.Size = new Size(331, 27);
             BarkodNoAra.TabIndex = 41;
+            BarkodNoAra.TextChanged += BarkodNoAra_TextChanged;
             // 
             // label1
             // 
@@ -226,14 +236,51 @@
             label1.TabIndex = 42;
             label1.Text = "Barkod Numarasına Göre Ara";
             // 
-            // button1
+            // comboKategori
             // 
-            button1.Location = new Point(859, 33);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 43;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            comboKategori.FormattingEnabled = true;
+            comboKategori.Location = new Point(1077, 170);
+            comboKategori.Name = "comboKategori";
+            comboKategori.Size = new Size(151, 28);
+            comboKategori.TabIndex = 44;
+            comboKategori.SelectedIndexChanged += comboKategori_SelectedIndexChanged;
+            // 
+            // comboMarka
+            // 
+            comboMarka.FormattingEnabled = true;
+            comboMarka.Location = new Point(1077, 214);
+            comboMarka.Name = "comboMarka";
+            comboMarka.Size = new Size(151, 28);
+            comboMarka.TabIndex = 45;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(1020, 217);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 20);
+            label2.TabIndex = 47;
+            label2.Text = "Marka";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(1004, 177);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 20);
+            label3.TabIndex = 46;
+            label3.Text = "Kategori";
+            // 
+            // btnMarkaGuncelle
+            // 
+            btnMarkaGuncelle.ForeColor = Color.Black;
+            btnMarkaGuncelle.Location = new Point(1134, 252);
+            btnMarkaGuncelle.Name = "btnMarkaGuncelle";
+            btnMarkaGuncelle.Size = new Size(94, 29);
+            btnMarkaGuncelle.TabIndex = 48;
+            btnMarkaGuncelle.Text = "Güncelle";
+            btnMarkaGuncelle.UseVisualStyleBackColor = true;
+            btnMarkaGuncelle.Click += btnMarkaGuncelle_Click;
             // 
             // frmÜrünListele
             // 
@@ -241,7 +288,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 128, 255);
             ClientSize = new Size(1240, 537);
-            Controls.Add(button1);
+            Controls.Add(btnMarkaGuncelle);
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(comboMarka);
+            Controls.Add(comboKategori);
             Controls.Add(label1);
             Controls.Add(BarkodNoAra);
             Controls.Add(btnSil);
@@ -267,6 +318,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ürün Listeleme Sayfası";
             Load += frmÜrünListele_Load;
+            Click += btnSil_Click;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -295,6 +347,10 @@
         private Button btnSil;
         private TextBox BarkodNoAra;
         private Label label1;
-        private Button button1;
+        private ComboBox comboKategori;
+        private ComboBox comboMarka;
+        private Label label2;
+        private Label label3;
+        private Button btnMarkaGuncelle;
     }
 }
