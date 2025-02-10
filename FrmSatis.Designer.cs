@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            txtTelefon = new GroupBox();
+            aaa = new GroupBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            textBox3 = new TextBox();
+            txtTelefon = new TextBox();
             txtAdSoyad = new TextBox();
             txtTc = new TextBox();
             groupBox2 = new GroupBox();
@@ -44,7 +44,7 @@
             label4 = new Label();
             txtToplamFiyat = new TextBox();
             txtSatşFiyatı = new TextBox();
-            txtMiktarı = new TextBox();
+            txtMiktari = new TextBox();
             txtÜrünAdı = new TextBox();
             txtBarkodNo = new TextBox();
             btnEkle = new Button();
@@ -62,7 +62,7 @@
             button6 = new Button();
             button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            txtTelefon.SuspendLayout();
+            aaa.SuspendLayout();
             groupBox2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -77,20 +77,20 @@
             dataGridView1.Size = new Size(575, 308);
             dataGridView1.TabIndex = 0;
             // 
-            // txtTelefon
+            // aaa
             // 
-            txtTelefon.Controls.Add(label3);
-            txtTelefon.Controls.Add(label2);
-            txtTelefon.Controls.Add(label1);
-            txtTelefon.Controls.Add(textBox3);
-            txtTelefon.Controls.Add(txtAdSoyad);
-            txtTelefon.Controls.Add(txtTc);
-            txtTelefon.Location = new Point(28, 148);
-            txtTelefon.Name = "txtTelefon";
-            txtTelefon.Size = new Size(320, 154);
-            txtTelefon.TabIndex = 1;
-            txtTelefon.TabStop = false;
-            txtTelefon.Text = "Müşteri İşlemleri";
+            aaa.Controls.Add(label3);
+            aaa.Controls.Add(label2);
+            aaa.Controls.Add(label1);
+            aaa.Controls.Add(txtTelefon);
+            aaa.Controls.Add(txtAdSoyad);
+            aaa.Controls.Add(txtTc);
+            aaa.Location = new Point(28, 148);
+            aaa.Name = "aaa";
+            aaa.Size = new Size(320, 154);
+            aaa.TabIndex = 1;
+            aaa.TabStop = false;
+            aaa.Text = "Müşteri İşlemleri";
             // 
             // label3
             // 
@@ -119,12 +119,12 @@
             label1.TabIndex = 3;
             label1.Text = "TC";
             // 
-            // textBox3
+            // txtTelefon
             // 
-            textBox3.Location = new Point(137, 103);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 2;
+            txtTelefon.Location = new Point(137, 103);
+            txtTelefon.Name = "txtTelefon";
+            txtTelefon.Size = new Size(125, 27);
+            txtTelefon.TabIndex = 2;
             // 
             // txtAdSoyad
             // 
@@ -139,6 +139,7 @@
             txtTc.Name = "txtTc";
             txtTc.Size = new Size(125, 27);
             txtTc.TabIndex = 0;
+            txtTc.TextChanged += txtTc_TextChanged;
             // 
             // groupBox2
             // 
@@ -149,7 +150,7 @@
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(txtToplamFiyat);
             groupBox2.Controls.Add(txtSatşFiyatı);
-            groupBox2.Controls.Add(txtMiktarı);
+            groupBox2.Controls.Add(txtMiktari);
             groupBox2.Controls.Add(txtÜrünAdı);
             groupBox2.Controls.Add(txtBarkodNo);
             groupBox2.Location = new Point(28, 308);
@@ -210,6 +211,7 @@
             txtToplamFiyat.Name = "txtToplamFiyat";
             txtToplamFiyat.Size = new Size(125, 27);
             txtToplamFiyat.TabIndex = 4;
+            txtToplamFiyat.TextAlign = HorizontalAlignment.Center;
             // 
             // txtSatşFiyatı
             // 
@@ -217,13 +219,18 @@
             txtSatşFiyatı.Name = "txtSatşFiyatı";
             txtSatşFiyatı.Size = new Size(125, 27);
             txtSatşFiyatı.TabIndex = 3;
+            txtSatşFiyatı.TextAlign = HorizontalAlignment.Center;
+            txtSatşFiyatı.TextChanged += txtSatşFiyatı_TextChanged;
             // 
-            // txtMiktarı
+            // txtMiktari
             // 
-            txtMiktarı.Location = new Point(137, 81);
-            txtMiktarı.Name = "txtMiktarı";
-            txtMiktarı.Size = new Size(125, 27);
-            txtMiktarı.TabIndex = 2;
+            txtMiktari.Location = new Point(137, 81);
+            txtMiktari.Name = "txtMiktari";
+            txtMiktari.Size = new Size(125, 27);
+            txtMiktari.TabIndex = 2;
+            txtMiktari.Text = "1";
+            txtMiktari.TextAlign = HorizontalAlignment.Center;
+            txtMiktari.TextChanged += txtMiktari_TextChanged;
             // 
             // txtÜrünAdı
             // 
@@ -231,6 +238,7 @@
             txtÜrünAdı.Name = "txtÜrünAdı";
             txtÜrünAdı.Size = new Size(125, 27);
             txtÜrünAdı.TabIndex = 1;
+            txtÜrünAdı.TextAlign = HorizontalAlignment.Center;
             // 
             // txtBarkodNo
             // 
@@ -238,19 +246,22 @@
             txtBarkodNo.Name = "txtBarkodNo";
             txtBarkodNo.Size = new Size(125, 27);
             txtBarkodNo.TabIndex = 0;
+            txtBarkodNo.TextAlign = HorizontalAlignment.Center;
+            txtBarkodNo.TextChanged += txtBarkodNo_TextChanged;
             // 
             // btnEkle
             // 
-            btnEkle.Location = new Point(397, 498);
+            btnEkle.Location = new Point(404, 489);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(94, 29);
             btnEkle.TabIndex = 3;
             btnEkle.Text = "Ekle";
             btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
             // btnSatışYap
             // 
-            btnSatışYap.Location = new Point(517, 498);
+            btnSatışYap.Location = new Point(514, 489);
             btnSatışYap.Name = "btnSatışYap";
             btnSatışYap.Size = new Size(94, 29);
             btnSatışYap.TabIndex = 4;
@@ -278,7 +289,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(764, 498);
+            label9.Location = new Point(764, 493);
             label9.Name = "label9";
             label9.Size = new Size(101, 20);
             label9.TabIndex = 7;
@@ -287,7 +298,7 @@
             // lblGenelToplam
             // 
             lblGenelToplam.AutoSize = true;
-            lblGenelToplam.Location = new Point(871, 502);
+            lblGenelToplam.Location = new Point(871, 493);
             lblGenelToplam.Name = "lblGenelToplam";
             lblGenelToplam.Size = new Size(33, 20);
             lblGenelToplam.TabIndex = 8;
@@ -392,14 +403,15 @@
             Controls.Add(btnEkle);
             Controls.Add(groupBox2);
             Controls.Add(dataGridView1);
-            Controls.Add(txtTelefon);
+            Controls.Add(aaa);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmSatis";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Satış Sayfası";
+            Load += FrmSatis_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            txtTelefon.ResumeLayout(false);
-            txtTelefon.PerformLayout();
+            aaa.ResumeLayout(false);
+            aaa.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -410,12 +422,12 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private GroupBox txtTelefon;
+        private GroupBox aaa;
         private GroupBox groupBox2;
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox3;
+        private TextBox txtTelefon;
         private TextBox txtAdSoyad;
         private TextBox txtTc;
         private Label label8;
@@ -425,7 +437,7 @@
         private Label label4;
         private TextBox txtToplamFiyat;
         private TextBox txtSatşFiyatı;
-        private TextBox txtMiktarı;
+        private TextBox txtMiktari;
         private TextBox txtÜrünAdı;
         private TextBox txtBarkodNo;
         private Button btnEkle;
