@@ -267,6 +267,7 @@
             btnSatışYap.TabIndex = 4;
             btnSatışYap.Text = "Satış Yap";
             btnSatışYap.UseVisualStyleBackColor = true;
+            btnSatışYap.Click += btnSatışYap_Click;
             // 
             // btnSil
             // 
@@ -276,6 +277,7 @@
             btnSil.TabIndex = 5;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // btnSatışİptal
             // 
@@ -285,6 +287,7 @@
             btnSatışİptal.TabIndex = 6;
             btnSatışİptal.Text = "Satış İptal";
             btnSatışİptal.UseVisualStyleBackColor = true;
+            btnSatışİptal.Click += btnSatışİptal_Click;
             // 
             // label9
             // 
@@ -347,6 +350,7 @@
             button9.TabIndex = 4;
             button9.Text = "Satışları Listeleme";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button8
             // 
@@ -390,6 +394,7 @@
             // 
             // FrmSatis
             // 
+            AcceptButton = btnEkle;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 128, 255);
