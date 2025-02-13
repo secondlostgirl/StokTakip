@@ -277,7 +277,13 @@ namespace StokTakip
                     komut2.ExecuteNonQuery();
                     baglanti.Close();
                 }
-
+                baglanti.Open();
+                SqlCommand komut3 = new SqlCommand("delete from sepet", baglanti);
+                komut3.ExecuteNonQuery();
+                baglanti.Close();
+                daset.Tables["sepet"].Clear();
+                sepetlistele();
+                hesapla();
             }
         }
 
